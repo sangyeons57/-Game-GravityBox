@@ -220,14 +220,6 @@ let level = 0
 
         })
 
-    }
-
-    function update()
-    {
-        if(player.body.touching.down || player.body.touching.up || player.body.touching.left || player.body.touching.right){
-            jump = 0
-        }
-
         if (level === 0){
             wall.create(350,590, 'wall1').setScale(0.5).refreshBody()
             wall.create(550,590, 'wall1').setScale(0.5).refreshBody()
@@ -269,6 +261,15 @@ let level = 0
             endmsg.setText("Game Over")
             
         }
+
+    }
+
+    function update()
+    {
+        if(player.body.touching.down || player.body.touching.up || player.body.touching.left || player.body.touching.right){
+            jump = 0
+        }
+
     }
 
     function moveplatform(x,y, xspeed, yspeed, isRepetitiveMove=true){
@@ -277,7 +278,7 @@ let level = 0
 
     function nextlevel_1(){
         console.log(2)
-        level = 1
+        level = +1
     }
 
     function dead_fire(){
